@@ -33,7 +33,7 @@ const INITIAL_NODES = [
     type: 'square',
     position: {
       x: 200,
-      y: 400,
+      y: 200,
     },
     data: {},
   },
@@ -41,8 +41,8 @@ const INITIAL_NODES = [
     id: crypto.randomUUID(),
     type: 'square',
     position: {
-      x: 1000,
-      y: 400,
+      x: 700,
+      y: 200,
     },
     data: {},
   },
