@@ -59,7 +59,10 @@ Describe your project
 The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
+- [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [React Flow](https://reactflow.dev/)
+- [Tailwindcss](https://tailwindcss.com/)
 
 ## :white_check_mark: Requirements ##
 
