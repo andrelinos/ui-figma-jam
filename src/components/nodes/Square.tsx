@@ -1,5 +1,35 @@
-import { NodeProps } from 'reactflow'
+import { Handle, NodeProps, Position } from 'reactflow'
 
 export function Square(props: NodeProps) {
-  return <div className="h-52 w-52 rounded-lg bg-fuchsia-600" />
+  return (
+    <div className="h-[200px] w-[200px] rounded-lg bg-fuchsia-600">
+      <Handle
+        id="right"
+        type="source"
+        position={Position.Right}
+        className="-right-5 h-3 w-3 bg-blue-400/80"
+      />
+
+      <Handle
+        id="left"
+        type="source"
+        position={Position.Left}
+        className="-left-5 h-3 w-3 bg-blue-400/80"
+      />
+
+      <Handle
+        id="top"
+        type="source"
+        position={Position.Top}
+        className="-top-5 h-3 w-3 bg-blue-400/80"
+      />
+
+      <Handle
+        id="bottom"
+        type="source"
+        position={Position.Bottom}
+        className="-bottom-5 h-3 w-3 bg-blue-400/80"
+      />
+    </div>
+  )
 }

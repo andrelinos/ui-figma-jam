@@ -1,6 +1,16 @@
 import 'reactflow/dist/style.css'
+import './styles/globals.css'
 
-import ReactFlow, { Background, Controls, Node } from 'reactflow'
+import { useCallback } from 'react'
+import ReactFlow, {
+  addEdge,
+  Background,
+  Connection,
+  ConnectionMode,
+  Controls,
+  Node,
+  useEdgesState,
+} from 'reactflow'
 import { zinc } from 'tailwindcss/colors'
 
 import { Square } from './components/nodes/Square'
@@ -32,9 +42,25 @@ const INITIAL_NODES = [
 ] satisfies Node[]
 
 export function App() {
+  const [edges, setEdges, onEdgesChange] = useEdgesState([])
+
+  const onConnect = useCallback(
+    (connection: Connection) => {
+      return setEdges((edges) => addEdge(connection, edges))
+    },
+    [setEdges],
+  )
+
   return (
     <div className="h-screen w-screen">
-      <ReactFlow nodeTypes={NODE_TYPES} nodes={INITIAL_NODES}>
+      <ReactFlow
+        nodeTypes={NODE_TYPES}
+        nodes={INITIAL_NODES}
+        edges={edges}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        connectionMode={ConnectionMode.Loose}
+      >
         <Background gap={12} size={2} color={zinc['200']} />
         <Controls />
       </ReactFlow>

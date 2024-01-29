@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import './styles/globals.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
