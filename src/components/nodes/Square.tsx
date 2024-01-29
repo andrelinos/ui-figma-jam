@@ -1,8 +1,16 @@
-import { Handle, NodeProps, Position } from 'reactflow'
+import { Handle, NodeProps, NodeResizer, Position } from 'reactflow'
 
 export function Square(props: NodeProps) {
   return (
-    <div className="h-[200px] w-[200px] rounded-lg bg-fuchsia-600">
+    <div className="h-full min-h-[200px] w-full min-w-[200px] rounded-lg bg-fuchsia-600 transition-all ease-in-out hover:brightness-95">
+      <NodeResizer
+        minWidth={200}
+        minHeight={200}
+        isVisible
+        lineClassName="border-blue-400"
+        handleClassName="w-3 h-3 bg-white border-2 rounded border-blue-400"
+      />
+
       <Handle
         id="right"
         type="source"
